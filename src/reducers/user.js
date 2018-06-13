@@ -5,7 +5,7 @@ const users = (state = {isAllSelected:false}, action) => {
     case 'FETCH_USERS':  
     let users = state;  
     console.log(state)
-    users.users = action.users;
+    users = action.users;
     console.log(users);
     return users
     case 'ADD_USER':  
