@@ -1,9 +1,9 @@
 import React, {Component}from 'react'
 import { connect } from 'react-redux'
-import { fetchUsersSucess as addUser } from '../actions/actions'
+import { deleteUser } from '../actions/actions'
 import {bindActionCreators} from 'redux'
 
-class AddUser extends Component {
+class DeleteUser extends Component {
   render() {
   return (
     <div>
@@ -11,13 +11,13 @@ class AddUser extends Component {
         onSubmit={e => {
           e.preventDefault();
          
-         this.props.addUser({name:'NEW'});
+         this.props.deleteUser();
          
         }}
       >
         
         <button type="submit">
-          Add User
+          Delete User
         </button>
       </form>
     </div>
@@ -31,6 +31,6 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({addUser: addUser}, dispatch);
+  return bindActionCreators({deleteUser: deleteUser}, dispatch);
 }
-export default connect(mapStateToProps,mapDispatchToProps)(AddUser)
+export default connect(mapStateToProps,mapDispatchToProps)(DeleteUser)
